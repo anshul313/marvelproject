@@ -1,0 +1,79 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.Container{
+    width: 100%;
+    height: 20%;
+    background-color: black;
+    padding: 0%;
+    color: white;
+}
+.Navbar{
+    width: 100%;
+    height: 20%;
+    color: white;
+}
+.Navbar img{
+  display: block;
+  height: 100px;
+  width: 250px;
+  margin-top: 0%;
+  margin-left: 35%;
+}
+.links{
+    padding-left: 32%;
+}
+a{
+    margin-left: 1%;
+    color: white !important;
+    font-size: 15px;
+}
+a:hover{
+    transition: 0.8s;
+    color: red !important;
+}
+.tales {
+    width: 100%;
+  }
+  .carousel-inner{
+    width:100%;
+    max-height: 10% !important;
+  }
+  li{
+    width: fit-content;
+    display: inline-block;
+    list-style: none;
+    /* background-color: wheat; */
+    border: 0.5px solid white;
+    margin-left: 10px;
+  }
+  button:hover{
+    background-color: #0CF21D;
+    transition: 1s;
+  }
+
+img{
+    width: 300px;
+    height: 300px;
+
+}
+.cards{
+    display: inline-flex;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 20px;
+    border: 1px solid lightgray;
+}
+.cards:hover{
+    box-shadow: 5px 5px 5px 5px black;
+}
+.cards img:hover{
+    width: 350px;
+    height: 350px;
+    transition: 1s;
+}
+.main{
+    display: inline-flex;
+}
