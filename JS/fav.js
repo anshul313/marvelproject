@@ -21,16 +21,13 @@ const favouriteMovies = document.querySelector(".favourite");
       const titlediv = document.createElement("div");
       const titleh4 = document.createElement("h4");
       titleh4.innerHTML = movie.name;
-      const titlebutton = document.createElement("button");
-      titlebutton.className = "btn btn-outline-success";
-      titlebutton.innerHTML = "Add to favourite";
       const deletebutton = document.createElement("button");
       deletebutton.className = "btn btn-outline-danger";
       deletebutton.innerHTML = "remove from favourite";
       deletebutton.id = movie.id;
       deletebutton.addEventListener("click", removetofav.bind(null, movie.id));
       titlediv.appendChild(titleh4);
-      titlediv.appendChild(titlebutton);
+     
       titlediv.appendChild(deletebutton);
       cardimagediv.appendChild(cardimg);
       carddiv.appendChild(cardimagediv);
@@ -41,6 +38,9 @@ const favouriteMovies = document.querySelector(".favourite");
   }
   // this removetofav function is use to  remove card from favourite div
   function removetofav(id) {
+    movies = movies.filter(function (ele) {
+      return ele.id != id;
+    });
     var element = document.getElementById("fav" + id).remove();
     console.log(element);
   }

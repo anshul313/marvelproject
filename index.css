@@ -72,14 +72,16 @@ img{
     margin-top: 20px;
     border: 1px solid lightgray;
 }
-.cards:hover{
+.main:hover{
     box-shadow: 5px 5px 5px 5px black;
 }
 .cards img:hover{
     width: 350px;
     height: 350px;
     transition: 1s;
+    
 }
 .main{
     display: inline-flex;
+    
 }
