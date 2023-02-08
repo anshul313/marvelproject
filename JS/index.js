@@ -119,14 +119,15 @@ function showAddToastrNotification(msg) {
   toastr.options = {
     closeButton: false,
     debug: false,
-    newestOnTop: false,
+    newestOnTop: true,
     progressBar: true,
     positionClass: "toast-top-right",
     preventDuplicates: true,
+    preventOpenDuplicates: true,
     onclick: null,
-    showDuration: "1000",
+    showDuration: "2000",
     hideDuration: "1000",
-    timeOut: "50",
+    timeOut: "2000",
     extendedTimeOut: "1000",
     showEasing: "swing",
     hideEasing: "linear",
@@ -137,7 +138,7 @@ function showAddToastrNotification(msg) {
   setInterval(function () {
     if (!flag) {
       flag = true; //store this to compare later
-      toastr.success(msg);
+      toastr.success(msg,"Character Added");
     }
   }, 100);
 }
@@ -145,14 +146,15 @@ function showDeleteToastrNotification(msg) {
   toastr.options = {
     closeButton: false,
     debug: false,
-    newestOnTop: false,
+    newestOnTop: true,
     progressBar: true,
     positionClass: "toast-top-right",
     preventDuplicates: true,
+    preventOpenDuplicates: true,
     onclick: null,
-    showDuration: "00",
+    showDuration: "2000",
     hideDuration: "1000",
-    timeOut: "50",
+    timeOut: "2000",
     extendedTimeOut: "1000",
     showEasing: "swing",
     hideEasing: "linear",
@@ -163,7 +165,7 @@ function showDeleteToastrNotification(msg) {
   setInterval(function () {
     if (!flag) {
       flag = true; //store this to compare later
-      toastr.error(msg);
+      toastr.error(msg,"Removed");
     }
   }, 100);
 }
