@@ -3,9 +3,16 @@ const comic = document.querySelector('.comics');
 const series = document.querySelector('.series');
 const events = document.querySelector('.events');
 const stories = document.querySelector('.stories');
+const image = document.querySelector('.image');
+const more = document.querySelector('.more');
 var characterdetail = sessionStorage.getItem('viewdetail');
   character = JSON.parse(characterdetail); 
   console.log(character);
+//   const img = document.createElement('img');
+//   img.src = character[0].thumbnail.path+'jpg';
+//   img.alt = "No image found";
+//   console.log(img.src)
+//   image.appendChild(img);
   const titleh1 = document.createElement("h1");
       titleh1.innerHTML = character[0].name;
       details.appendChild(titleh1);
@@ -47,6 +54,21 @@ for(var story of character[0].stories.items){
 const li = document.createElement("li");
 li.innerHTML = story.name;
 stories.appendChild(li);
+}
+
+ 
+for(var url of character[0].urls){       
+    const urltypes = document.createElement("h1");
+    urltypes.innerHTML =url.type;
+    more.appendChild(urltypes);
+    const message = document.createElement("p");
+    message.innerHTML ='click on below link to view more '+url.type;
+    more.appendChild(message);
+    const a = document.createElement("a");
+    a.href = url.url;
+    a.target ='_blank';
+    a.innerHTML = url.type+'s';
+    more.appendChild(a);
 }
 
 
