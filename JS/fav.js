@@ -39,10 +39,16 @@ const favouriteMovies = document.querySelector(".favourite");
   // this removetofav function is use to  remove card from favourite div
   function removetofav(id) {
     movies = movies.filter(function (ele) {
+      if(ele.id==id){
+        localStorage.removeItem("items");
+      }
       return ele.id != id;
     });
     var element = document.getElementById("fav" + id).remove();
     showDeleteToastrNotification('Character successfully removed from favourite');
+    window.sessionStorage.setItem("items", JSON.stringify(movies));
+    movies = JSON.parse(movies); 
+    
   }
 
   // this addtofav function is use to add card in favourite div
