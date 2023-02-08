@@ -90,16 +90,52 @@ const favouriteMovies = document.querySelector(".favourite");
   showcards();
 
   function showAddToastrNotification(msg){
-    $(function(){
-      toastr.success(msg,{timeOut: 500});
-      toastr.options.closeMethod = 'fadeOut';
-      toastr.options.closeDuration = 5;
-  });
+    toastr.options = {
+      "closeButton": false,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": true,
+      "positionClass": "toast-top-right",
+      "preventDuplicates": true,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "50",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+    var flag=false;
+    setInterval(function() {
+        if(!flag){
+            flag=true;//store this to compare later
+    toastr.success(msg);
+        } },100);
 }
   function showDeleteToastrNotification(msg){
-    $(function(){
-      toastr.error(msg,{timeOut: 500});
-      toastr.options.closeMethod = 'fadeOut';
-      toastr.options.closeDuration = 5;
-  });
+    toastr.options = {
+      "closeButton": false,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": true,
+      "positionClass": "toast-top-right",
+      "preventDuplicates": true,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "50",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+    var flag=false;
+    setInterval(function() {
+        if(!flag){
+            flag=true;//store this to compare later
+    toastr.error;(msg);
+        } },100);
   }
