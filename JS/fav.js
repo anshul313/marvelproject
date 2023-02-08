@@ -3,8 +3,7 @@ const favouriteMovies = document.querySelector(".favourite");
   var movies = sessionStorage.getItem('items');
   movies = JSON.parse(movies); 
 
-  function showcards() {
-  
+  function showcards() {  
     for (var movie of movies) {
       const favouriteMainDiv = document.createElement("div");
       favouriteMainDiv.className = "main";
@@ -24,8 +23,7 @@ const favouriteMovies = document.querySelector(".favourite");
       deletebutton.innerHTML = "remove from favourite";
       deletebutton.id = movie.id;
       deletebutton.addEventListener("click", removetofav.bind(null, movie.id));
-      titlediv.appendChild(titleh4);
-     
+      titlediv.appendChild(titleh4);     
       titlediv.appendChild(deletebutton);
       cardimagediv.appendChild(cardimg);
       carddiv.appendChild(cardimagediv);
@@ -96,7 +94,7 @@ const favouriteMovies = document.querySelector(".favourite");
   showcards();
 
 
-  /  here we are showing notification when we delete character from favourite
+  // here we are showing notification when we delete character from favourite
 
 function showDeleteToastrNotification(msg) {
   toastr.options = {

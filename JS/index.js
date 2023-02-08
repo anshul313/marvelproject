@@ -119,6 +119,16 @@ function addtofav(id) {
     }
   }
 }
+  
+// this function called on click view more details
+
+function viewMore(id){
+  var  viewdetaildata = data.data.results.filter(function (ele) {
+    return ele.id == id;
+  });
+  window.sessionStorage.setItem("viewdetail", JSON.stringify(viewdetaildata));
+  location.href="superherodetail.html";
+}
 
 // here we are showing notification when we adding character in favourite from searched items
 
@@ -178,11 +188,4 @@ function showDeleteToastrNotification(msg) {
       toastr.error(msg,"Removed");
     }
   }, 100);
-}
-function viewMore(id){
-  var  viewdetaildata = data.data.results.filter(function (ele) {
-    return ele.id == id;
-  });
-  window.sessionStorage.setItem("viewdetail", JSON.stringify(viewdetaildata));
-  location.href="superherodetail.html";
 }
