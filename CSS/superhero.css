@@ -1,0 +1,56 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: lightgrey;
+    
+}
+
+.Container{
+    width: 100%;
+    height: 20%;
+    background-color: black;
+    padding: 0%;
+    color: white;
+}
+.Navbar{
+    width: 100%;
+    height: 20%;
+    color: white;
+}
+.Navbar img{
+  display: block;
+  height: 100px;
+  width: 250px;
+  margin-top: 0%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.links{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+a{
+    margin-left: 1%;
+    color: white !important;
+    font-size: 15px;
+}
+a:hover{
+    transition: 0.8s;
+    color: red !important;
+}
+.tales {
+    width: 100%;
+  }
+  .carousel-inner{
+    width:100%;
+    max-height: 10% !important;
+  }
+
+.details{
+    text-align: center;
+}
+ul{
+    list-style: decimal;
+}

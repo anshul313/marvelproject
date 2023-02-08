@@ -42,13 +42,19 @@ function addcard(data) {
   const titlediv = document.createElement("div");
   const titleh4 = document.createElement("h4");
   titleh4.innerHTML = data.name;
+  const detailbutton = document.createElement("button");
+  detailbutton.className = "btn btn-outline-success";
+  detailbutton.innerHTML = "View more details";
+  detailbutton.id = data.id;
   const titlebutton = document.createElement("button");
   titlebutton.className = "btn btn-outline-success";
   titlebutton.innerHTML = "Add to favourite";
   titlebutton.id = data.id;
   titlebutton.addEventListener("click", addtofav.bind(null, data.id));
+  detailbutton.addEventListener("click", viewMore.bind(null, data.id));
   titlediv.appendChild(titleh4);
   titlediv.appendChild(titlebutton);
+  titlediv.appendChild(detailbutton);
   cardimagediv.appendChild(cardimg);
   carddiv.appendChild(cardimagediv);
   cardimagediv.appendChild(titlediv);
@@ -168,4 +174,12 @@ function showDeleteToastrNotification(msg) {
       toastr.error(msg,"Removed");
     }
   }, 100);
+}
+function viewMore(id){
+  var  viewdetaildata = data.data.results.filter(function (ele) {
+    return ele.id == id;
+  });
+  console.log(viewdetaildata);
+  window.sessionStorage.setItem("viewdetail", JSON.stringify(viewdetaildata));
+  location.href="superherodetail.html";
 }
