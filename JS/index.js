@@ -163,8 +163,7 @@ function showDeleteToastrNotification(msg) {
   setInterval(function () {
     if (!flag) {
       flag = true; //store this to compare later
-      toastr.error;
-      msg;
+      toastr.error(msg);
     }
   }, 100);
 }
