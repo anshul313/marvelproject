@@ -150,7 +150,7 @@ function showDeleteToastrNotification(msg) {
     positionClass: "toast-top-right",
     preventDuplicates: true,
     onclick: null,
-    showDuration: "300",
+    showDuration: "00",
     hideDuration: "1000",
     timeOut: "50",
     extendedTimeOut: "1000",
