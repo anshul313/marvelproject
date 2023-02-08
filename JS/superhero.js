@@ -23,7 +23,7 @@ var characterdetail = sessionStorage.getItem('viewdetail');
 // here we are adding COMICS  heading 
 
       const comictitleh1 = document.createElement("h1");
-        comictitleh1.innerHTML = "COMICS";
+        comictitleh1.innerHTML = "COMICS &darr;";
         comic.appendChild(comictitleh1);
 
         //  here we are adding list items in COMICS LIST
@@ -37,7 +37,7 @@ var characterdetail = sessionStorage.getItem('viewdetail');
 // here we are adding EVENTS  heading 
 
     const eventstitleh1 = document.createElement("h1");
-    eventstitleh1.innerHTML = "EVENTS";
+    eventstitleh1.innerHTML = "EVENTS &darr;";
     events.appendChild(eventstitleh1);
 
     //  here we are adding list items in EVENTS LIST
@@ -51,7 +51,7 @@ for(var com of character[0].events.items){
 // here we are adding SERIES heading 
 
     const seriestitleh1 = document.createElement("h1");
-    seriestitleh1.innerHTML = "SERIES";
+    seriestitleh1.innerHTML = "SERIES &darr;";
     series.appendChild(seriestitleh1);
 
     //  here we are adding list items in SERIES LIST
@@ -65,7 +65,7 @@ for(var com of character[0].series.items){
 // here we are adding STORIES heading 
 
 const storiestitleh1 = document.createElement("h1");
-storiestitleh1.innerHTML = "STORIES";
+storiestitleh1.innerHTML = "STORIES &darr;";
 stories.appendChild(storiestitleh1);
 
 //  here we are adding list items in STORIES LIST
@@ -80,10 +80,10 @@ stories.appendChild(li);
 
 for(var url of character[0].urls){       
     const urltypes = document.createElement("h1");
-    urltypes.innerHTML =url.type;
+    urltypes.innerHTML =url.type+' &darr;';
     more.appendChild(urltypes);
     const message = document.createElement("p");
-    message.innerHTML ='click on below link to view more '+url.type;
+    message.innerHTML ='click on below link to view more '+url.type+' &darr;';
     more.appendChild(message);
     const a = document.createElement("a");
     a.href = url.url;
