@@ -1,13 +1,14 @@
+// HERE WE ARE GETTING REFRENCE OF CLASSES TO ADD CONTENT DYNAMICALLY
 const search = document.querySelector("#search");
-console.log(search);
 search.addEventListener("click", searchresult);
 const searchinput = document.querySelector("#searchinput");
 const searchresults = document.querySelector(".searchresult");
-// console.log(searchresults)
 const button = document.querySelector("button");
 const card = document.querySelector(".cards");
 const favouriteMovies = document.querySelector(".favourite");
 const maindiv = document.querySelector(".main");
+
+//variables to store data
 
 var data;
 var favouritedata = [];
@@ -24,7 +25,7 @@ async function searchresult() {
   //   remove previous loaded result to show only new results
   $("div.cards").remove();
 
-  //   calling all results Array to make card
+  //   with the of  api results Array to make cards
   for (var character of data.data.results) {
     addcard(character);
   }
@@ -65,10 +66,9 @@ function removetofav(id) {
   favouritedata = favouritedata.filter(function (ele) {
     return ele.id != id;
   });
-  console.log(favouritedata);
+
   var element = document.getElementById("fav" + id).remove();
   showDeleteToastrNotification("Character successfully removed from favourite");
-  // console.log(element);
 }
 
 // this addtofav function is use to add card in favourite div
@@ -78,7 +78,6 @@ function addtofav(id) {
   for (var character of data.data.results) {
     if (character.id == id) {
       favouritedata.push(character);
-      //  console.log(favouritedata);
       window.sessionStorage.setItem("items", JSON.stringify(favouritedata));
       for (var movie of favouritedata) {
         const favouriteMainDiv = document.createElement("div");
@@ -121,6 +120,8 @@ function addtofav(id) {
   }
 }
 
+// here we are showing notification when we adding character in favourite from searched items
+
 function showAddToastrNotification(msg) {
   toastr.options = {
     closeButton: false,
@@ -148,6 +149,9 @@ function showAddToastrNotification(msg) {
     }
   }, 100);
 }
+
+//  here we are showing notification when we delete character from favourite
+
 function showDeleteToastrNotification(msg) {
   toastr.options = {
     closeButton: false,
@@ -179,7 +183,6 @@ function viewMore(id){
   var  viewdetaildata = data.data.results.filter(function (ele) {
     return ele.id == id;
   });
-  console.log(viewdetaildata);
   window.sessionStorage.setItem("viewdetail", JSON.stringify(viewdetaildata));
   location.href="superherodetail.html";
 }

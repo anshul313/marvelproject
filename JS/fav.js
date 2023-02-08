@@ -4,9 +4,7 @@ const favouriteMovies = document.querySelector(".favourite");
   movies = JSON.parse(movies); 
 
   function showcards() {
-    console.log('show cards called');
-    console.log('storedArray is : ',movies);
-    console.log("showcard called");
+  
     for (var movie of movies) {
       const favouriteMainDiv = document.createElement("div");
       favouriteMainDiv.className = "main";
@@ -58,7 +56,6 @@ const favouriteMovies = document.querySelector(".favourite");
     for (var character of data.data.results) {
       if (character.id == id) {
         favouritedata.push(character);
-        //  console.log(favouritedata);
         window.sessionStorage.setItem("items", JSON.stringify(favouritedata));
         for (var movie of favouritedata) {
           const favouriteMainDiv = document.createElement("div");
@@ -93,9 +90,13 @@ const favouriteMovies = document.querySelector(".favourite");
       }
     }
   }
+
+  // calling showcards function to show added favourite movies 
+
   showcards();
 
 
+  /  here we are showing notification when we delete character from favourite
 
 function showDeleteToastrNotification(msg) {
   toastr.options = {
