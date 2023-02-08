@@ -42,7 +42,7 @@ const favouriteMovies = document.querySelector(".favourite");
       return ele.id != id;
     });
     var element = document.getElementById("fav" + id).remove();
-    console.log(element);
+    showDeleteToastrNotification('Character successfully removed from favourite');
   }
 
   // this addtofav function is use to add card in favourite div
@@ -88,3 +88,18 @@ const favouriteMovies = document.querySelector(".favourite");
     }
   }
   showcards();
+
+  function showAddToastrNotification(msg){
+    $(function(){
+      toastr.success(msg,{timeOut: 500});
+      toastr.options.closeMethod = 'fadeOut';
+      toastr.options.closeDuration = 5;
+  });
+}
+  function showDeleteToastrNotification(msg){
+    $(function(){
+      toastr.error(msg,{timeOut: 500});
+      toastr.options.closeMethod = 'fadeOut';
+      toastr.options.closeDuration = 5;
+  });
+  }

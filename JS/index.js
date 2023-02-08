@@ -63,7 +63,8 @@
     });
     console.log(favouritedata);
     var element = document.getElementById("fav" + id).remove();
-    console.log(element);
+    showDeleteToastrNotification('Character successfully removed from favourite');
+    // console.log(element);
   }
 
   // this addtofav function is use to add card in favourite div
@@ -108,9 +109,26 @@
           cardimagediv.appendChild(titlediv);
           favouriteMainDiv.appendChild(carddiv);
           favouriteMovies.appendChild(favouriteMainDiv);
+          var message = 'your Character '+movie.name+' added successfully in favourite';
+          showAddToastrNotification(message);
         }
       }
     }
+  }
+
+  function showAddToastrNotification(msg){
+    $(function(){
+      toastr.success(msg,{timeOut: 500});
+      toastr.options.closeMethod = 'fadeOut';
+      toastr.options.closeDuration = 5;
+  });
+}
+  function showDeleteToastrNotification(msg){
+    $(function(){
+      toastr.error(msg,{timeOut: 500});
+      toastr.options.closeMethod = 'fadeOut';
+      toastr.options.closeDuration = 5;
+  });
   }
   
   
